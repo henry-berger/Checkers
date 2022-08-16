@@ -18,3 +18,8 @@ PyQt5 implementation of 2-player checkers
 ### Allows for mulitple-jumps (which can be declined)
 
 <img src="https://user-images.githubusercontent.com/98615262/184764791-8dd78809-6381-46ed-9681-f1e7aa5553fb.png" width="700">
+
+### Custom-designed images
+
+<img src="https://user-images.githubusercontent.com/98615262/184894961-39bbb2e2-9293-4632-b701-fd66fdbe5892.png" width="300">
+
