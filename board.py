@@ -21,13 +21,13 @@ class Board():
                     
     def show(self):
         pass
-        print("Board:")
-        for row in self.b:
-            print_line = "\t"
-            for c in row:
-                print_line = print_line + self.key[c]
-            print(print_line)
-        print()
+        # print("Board:")
+        # for row in self.b:
+        #     print_line = "\t"
+        #     for c in row:
+        #         print_line = print_line + self.key[c]
+        #     print(print_line)
+        # print()
             
     def valid_move(self,start, end,turn):
         valid_piece = self.at(start)==turn or self.at(start)==turn*10

@@ -36,7 +36,7 @@ class Board_Widget(QWidget):
         # self.board_widget.setFixedHeight(768)
         # self.board_widget.setFixedWidth(768)
         # layout
-        self.blayout = QGridLayout(self)
+        self.blayout = QGridLayout(self.board_widget)
         self.board_widget.setLayout(self.blayout)
         self.blayout.setSpacing(1)
         
@@ -126,7 +126,7 @@ class Board_Widget(QWidget):
             for c in range(8):
                 piece_code = self.board.b[r][c]
                 if (piece_code==self.turn or piece_code==self.turn*10) and len(self.board.valid_moves([r,c]))>0:
-                    print(r,c)
+                    # print(r,c)
                     images = self.selected_image_key[piece_code]
                     button = PicButton(images)
                     button.setSizePolicy(QSizePolicy.Expanding,QSizePolicy.Expanding)
@@ -170,10 +170,10 @@ class Board_Widget(QWidget):
         def blank_step_clicker():
             self.board.move([prow,pcol],[row,col],end_turn=True)
             self.turn = 3 - self.turn
-            print("board.move("+str([prow,pcol])+","+str([row,col])+")")
+            # print("board.move("+str([prow,pcol])+","+str([row,col])+")")
             self.draw()
             self.run(enable=True)
-            print([prow,pcol],[row,col])
+            # print([prow,pcol],[row,col])
         return blank_step_clicker
 
     def display(self, message):
@@ -184,7 +184,7 @@ class Board_Widget(QWidget):
             next_skips = self.board.skip_moves([row,col],self.board.at([prow,pcol]))
             self.board.move([prow,pcol],[row,col],end_turn=(len(next_skips)==0))
             
-            print("board.move("+str([prow,pcol])+","+str([row,col])+")")
+            # print("board.move("+str([prow,pcol])+","+str([row,col])+")")
             # self.turn = 3 - self.turn
             if len(next_skips)==0:
                 self.turn = 3 - self.turn
